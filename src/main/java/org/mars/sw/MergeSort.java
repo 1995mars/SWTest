@@ -18,7 +18,7 @@ public class MergeSort {
             left[i] = array[i];
         }
         for (int i = mid; i < n ; i++) {
-            right[i] = array[i];
+            right[i - mid] = array[i];
         }
 
         mergeSort(left);
