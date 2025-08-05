@@ -65,15 +65,23 @@ public class DFSTopologicalBoom {
     public static void main(String[] args)
     {
         List<Bomb> bombs = new ArrayList<>();
-        bombs.add(new Bomb(2, 3, 2)); // nhảy đến 5, 8
-        bombs.add(new Bomb(1, 2, 3)); // nhảy đến 3, 5, 7
-        bombs.add(new Bomb(5, 1, 3)); // nhảy đến 6,7,8
+//        bombs.add(new Bomb(2, 3, 2)); // nhảy đến 5, 8
+//        bombs.add(new Bomb(1, 2, 3)); // nhảy đến 3, 5, 7
+//        bombs.add(new Bomb(5, 1, 3)); // nhảy đến 6,7,8
+
+        bombs.add(new Bomb(1, 4, 2)); // nhảy đến 3, 5, 7
+        bombs.add(new Bomb(2, 6, 1)); // nhảy đến 6,7,8
+        bombs.add(new Bomb(4, 3, 3)); // nhảy đến 5, 8
+        bombs.add(new Bomb(6, 3, 2)); // nhảy đến 3, 5, 7
+        bombs.add(new Bomb(8, 1, 3)); // nhảy đến 6,7,8
+
+        long start = System.currentTimeMillis();
 
         List<Integer> result = getJumpPositions(bombs);
         for (int node : result) {
             System.out.print(node + " ");
         }
-        System.out.println();
+        System.out.println("\n" + (System.currentTimeMillis() - start));
     }
 
 
