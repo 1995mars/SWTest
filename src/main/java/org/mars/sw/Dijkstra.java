@@ -19,7 +19,7 @@ public class Dijkstra {
         for (int i = 0; i < V; i++){
             adj[i] = new ArrayList<>();
         }
-        for (int i = 0; i < V; i++) {
+        for (int i = 0; i < edges.length; i++) {
             adj[edges[i][0]].add(new Edge(edges[i][0], edges[i][1], edges[i][2]));
         }
 
