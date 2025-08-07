@@ -1,28 +1,13 @@
 package org.mars.sw;
 
 import lombok.ToString;
+import org.mars.common.Edge;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class Edge implements Comparable<Edge> {
-
-    int src, dest, weight;
-
-    public Edge(int src, int dest, int weight) {
-        this.src = src;
-        this.dest = dest;
-        this.weight = weight;
-    }
-
-    // Compare two edges based on their weight
-    @Override
-    public int compareTo(Edge compareEdge) {
-        return this.weight - compareEdge.weight;
-    }
-}
 
 @ToString
 class Graph {
@@ -60,20 +45,20 @@ class Graph {
 
     public void kruskalMST() {
         makeSet(this.V);
-        List<Edge> edges = Arrays.asList(this.edges).stream().sorted((x,y) -> x.weight - y.weight).collect(Collectors.toList());
+        List<Edge> edges = Arrays.asList(this.edges).stream().sorted((x,y) -> x.getWeight() - y.getWeight()).collect(Collectors.toList());
         for (Edge edge : edges) {
             if (MST.size() == this.V -1) break;
-            if(find(edge.dest) != find(edge.src)) {
+            if(find(edge.getEnd()) != find(edge.getStart())) {
                 MST.add(edge);
-                union(edge.dest, edge.src);
+                union(edge.getEnd(), edge.getStart());
             }
             System.out.println("");
         }
         System.out.println(MST.toString());
         System.out.println("Edges in the MST:");
         for (Edge edge : MST) {
-            System.out.println(edge.src + " - "
-                    + edge.dest + ": " + edge.weight);
+            System.out.println(edge.getStart() + " - "
+                    + edge.getEnd() + ": " + edge.getWeight());
         }
     }
 }
