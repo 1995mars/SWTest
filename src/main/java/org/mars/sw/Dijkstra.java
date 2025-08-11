@@ -69,21 +69,25 @@ public class Dijkstra {
         int V = 6;
         int src = 0;
 
-        // Edge list format: {u, v, weight}
-        int[][] edges = {
-                {0, 1, 1}, {0, 2, 7}, {0, 3, 4},
-                {1, 4, 3},
-                {2, 4, 5}, {2, 5, 8},
-                {4, 5, 6},
-                {5, 3, 3}
-        };
+        int plan = 1;
+        plan = plan++ + --plan;
 
-        // Get shortest path distances
-        int[] result = dijkstra(V, edges, src);
-
-//         Print shortest distances in one line
-        for (int d : result)
-            System.out.print(d + " ");
+        System.out.println(plan);
+//        // Edge list format: {u, v, weight}
+//        int[][] edges = {
+//                {0, 1, 1}, {0, 2, 7}, {0, 3, 4},
+//                {1, 4, 3},
+//                {2, 4, 5}, {2, 5, 8},
+//                {4, 5, 6},
+//                {5, 3, 3}
+//        };
+//
+//        // Get shortest path distances
+//        int[] result = dijkstra(V, edges, src);
+//
+////         Print shortest distances in one line
+//        for (int d : result)
+//            System.out.print(d + " ");
     }
 
 

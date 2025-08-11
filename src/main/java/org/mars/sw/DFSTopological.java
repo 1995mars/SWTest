@@ -49,8 +49,8 @@ public class DFSTopological {
     public static void main(String[] args)
     {
         int v = 6;
-        int[][] edges = {{2, 3}, {3, 1}, {4, 0},
-                {4, 1}, {5, 0}, {5, 2}};
+        int[][] edges = {{5, 0},{2, 3},  {4, 0},
+                {4, 1},  {3, 1},{5, 2}};
 
         List<Integer> ans = topologicalSort(v, edges);
 
